@@ -1,0 +1,26 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/services/weather_service.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1659736446
+  }
+}
