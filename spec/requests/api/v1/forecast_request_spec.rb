@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'Forecast API'do 
   it 'sends the forecast based on a city' do
     city = 'denver,co'
-    get "api/v1/forecast?location=#{city}"
+    get "/api/v1/forecast?location=#{city}"
 
     expect(response).to be_successful
     forecast = JSON.parse(response.body, symbolize_names: true)
-
+    # binding.pry
     expect(forecast).to have_key(:data)
     expect(forecast[:data]).to have_key(:id)
     expect(forecast[:data][:id]).to eq(nil)
