@@ -10,6 +10,8 @@ class WeatherService
       f.params['lon'] = long
       f.params['units'] = 'imperial'
     end
+    # binding.pry
     BaseService.get_json(response)
+    # binding.pry
   end
 end

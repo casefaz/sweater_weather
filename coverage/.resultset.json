@@ -5,22 +5,33 @@
         "lines": [
           1,
           1,
-          0,
+          1,
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
-          0,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/services/base_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1659736446
+    "timestamp": 1659745190
   }
 }
