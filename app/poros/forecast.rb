@@ -26,7 +26,7 @@ class Forecast
   def hourly(data)
     data.first(8).map do |data|
       { 
-        time: Time.at(data[:dt]).to_s,
+        time: Time.at(data[:dt]).strftime('%I:%M:%S %p'),
         temperature: data[:temp],
         conditions: data[:weather].first[:description],
         icon: data[:weather].first[:icon]
