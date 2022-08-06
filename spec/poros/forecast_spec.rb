@@ -35,6 +35,7 @@ RSpec.describe Forecast do
 
     expect(forecast.hourly_weather.count).to eq(8)
     expect(forecast.hourly_weather.first[:time]).to be_a(String)
+    expect(forecast.hourly_weather.first[:time]).to eq("2022-08-06 10:00:00 -0600")
     expect(forecast.hourly_weather.first).to have_key(:icon)
     expect(forecast.hourly_weather.first).to_not have_key(:wind_gust)
   end
@@ -48,6 +49,7 @@ RSpec.describe Forecast do
     expect(forecast.daily_weather.first).to have_key(:date)
     expect(forecast.daily_weather.first).to have_key(:max_temp)
     expect(forecast.daily_weather.first[:max_temp]).to be_a(Float)
+    expect(forecast.daily_weather.first[:max_temp]).to eq(92.46)
     expect(forecast.daily_weather.first).to_not have_key(:uvi)
     expect(forecast.daily_weather.first).to_not have_key(:pop)
   end
