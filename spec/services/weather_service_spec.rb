@@ -15,13 +15,16 @@ RSpec.describe WeatherService do
       expect(weather_response).to have_key(:current)
       expect(weather_response).to have_key(:hourly)
       expect(weather_response).to have_key(:daily)
+      expect(weather_response[:current]).to have_key(:weather)
+      expect(weather_response[:current][:weather].first).to have_key(:description)
+      expect(weather_response[:current][:weather].first).to have_key(:icon)
       expect(weather_response).to_not have_key(:minutely)
       expect(weather_response).to_not have_key(:alerts)
     end
   end
 
   context 'sad path' do 
-    
+
   end
 end
 
