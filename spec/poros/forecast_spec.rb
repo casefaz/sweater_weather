@@ -34,5 +34,8 @@ RSpec.describe Forecast do
     forecast = Forecast.new(response)
 
     expect(forecast.hourly_weather.count).to eq(8)
+    expect(forecast.hourly_weather.first[:time]).to be_a(String)
+    expect(forecast.hourly_weather.first).to have_key(:icon)
+    expect(forecast.hourly_weather.first).to_not have_key(:wind_gust)
   end
 end
