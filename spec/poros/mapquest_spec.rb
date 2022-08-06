@@ -57,12 +57,12 @@ RSpec.describe Mapquest do
             }
           ]
       }
-      
+
       geolocator = Mapquest.new(data)
 
       expect(geolocator).to be_an_instance_of(Mapquest)
-      expect(geolocator.lat).to eq(39.738453)
-      expect(geolocator.lon).to eq(-104.984853)
+      expect(geolocator.lat).to eq('39.738453')
+      expect(geolocator.lon).to eq('-104.984853')
     end 
 
 

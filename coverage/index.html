@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-08-06T09:15:40-06:00">2022-08-06T09:15:40-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-08-06T09:17:10-06:00">2022-08-06T09:17:10-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -327,7 +327,7 @@
 
             
 
-            <code class="ruby">    @lat = data[:results].first[:locations].first[:latLng][:lat]</code>
+            <code class="ruby">    @lat = data[:results].first[:locations].first[:latLng][:lat].to_s</code>
           </li>
         </div>
       
@@ -338,7 +338,7 @@
 
             
 
-            <code class="ruby">    @lon = data[:results].first[:locations].first[:latLng][:lng]</code>
+            <code class="ruby">    @lon = data[:results].first[:locations].first[:latLng][:lng].to_s</code>
           </li>
         </div>
       
