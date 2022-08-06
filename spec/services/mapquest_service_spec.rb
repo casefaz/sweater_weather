@@ -1,15 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe MapQuestService do 
+RSpec.describe MapquestService do 
   it 'returns the data for the station closest to Turing' do 
-    from = '1331 17th St LL100, Denver, CO 80202'
-    to = '1550 Market St'
+    city = 'Denver,CO'
 
-    direction_data = MapQuestService.get_directions(from, to)
+    response = MapquestService.get_lat_lng(city)
 
-    expect(direction_data).to be_a(Hash)
-    expect(direction_data[:route]).to have_key(:distance)
-    expect(direction_data[:route]).to have_key(:formattedTime)
-    expect(direction_data[:route][:legs].first).to have_key(:maneuvers)
+    expect(response).to be_an(Hash)
+    expect(response).to have_key(:results)
+    expect(response[:results].first).to have_key(:locations)
+    expect(response[:results].first[:locations].first).to have_key(:latLng)
+    expect(response[:results].first[:locations].first[:latLng]).to have_key(:lng)
+    expect(response[:results].first[:locations].first[:latLng]).to have_key(:lat)
   end
 end
