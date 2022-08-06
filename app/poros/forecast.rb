@@ -5,6 +5,7 @@ class Forecast
   def initialize(data)
     @current_weather = current(data[:current])
     @hourly_weather = hourly(data[:hourly])
+    @daily_weather = daily(data[:daily])
   end
 
   def current(data)
@@ -34,6 +35,16 @@ class Forecast
   end
 
   def daily(data)
-
+    data.first(5).map do |data|
+      {
+        date: Time.at(data[:dt]).to_s,
+        sunrise: Time.at(data[:sunrise]).to_s,
+        sunset: Time.at(data[:sunset]).to_s,
+        max_temp: data[:temp][:max],
+        min_temp: data[:temp][:min],
+        conditions: data[:weather].first[:description],
+        icon: data[:weather].first[:icon]
+      }
+    end
   end
 end

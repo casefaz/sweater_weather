@@ -38,4 +38,17 @@ RSpec.describe Forecast do
     expect(forecast.hourly_weather.first).to have_key(:icon)
     expect(forecast.hourly_weather.first).to_not have_key(:wind_gust)
   end
+
+  it 'returns daily weather' do 
+    data = File.read("spec/fixtures/weather.json")
+    response = JSON.parse(data, symbolize_names: true)
+    forecast = Forecast.new(response)
+
+    expect(forecast.daily_weather.count).to eq(5)
+    expect(forecast.daily_weather.first).to have_key(:date)
+    expect(forecast.daily_weather.first).to have_key(:max_temp)
+    expect(forecast.daily_weather.first[:max_temp]).to be_a(Float)
+    expect(forecast.daily_weather.first).to_not have_key(:uvi)
+    expect(forecast.daily_weather.first).to_not have_key(:pop)
+  end
 end
