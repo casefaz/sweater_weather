@@ -27,4 +27,12 @@ RSpec.describe Forecast do
     expect(forecast.current_weather).to have_key(:sunrise)
     expect(forecast.current_weather).to_not have_key(:pressure)
   end
+
+  it 'returns hourly weather' do 
+    data = File.read("spec/fixtures/weather.json")
+    response = JSON.parse(data, symbolize_names: true)
+    forecast = Forecast.new(response)
+
+    expect(forecast.hourly_weather.count).to eq(8)
+  end
 end

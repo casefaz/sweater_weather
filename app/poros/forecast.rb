@@ -4,10 +4,10 @@ class Forecast
               :daily_weather
   def initialize(data)
     @current_weather = current(data[:current])
+    @hourly_weather = hourly(data[:hourly])
   end
 
   def current(data)
-    # binding.pry
     {
       datetime: Time.at(data[:dt]).to_s,
       sunrise: Time.at(data[:sunrise]).to_s,
@@ -23,7 +23,14 @@ class Forecast
   end
 
   def hourly(data)
-
+    data.first(8).map do |data|
+      { 
+        time: Time.at(data[:dt]).to_s,
+        temperature: data[:temp],
+        conditions: data[:weather].first[:description],
+        icon: data[:weather].first[:icon]
+      }
+    end
   end
 
   def daily(data)
