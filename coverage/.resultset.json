@@ -1,57 +1,43 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/facades/mapquest_facade.rb": {
+      "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/poros/forecast.rb": {
         "lines": [
           1,
           1,
           null,
-          1,
           null,
           1,
-          null,
-          null
-        ]
-      },
-      "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/services/mapquest_service.rb": {
-        "lines": [
-          1,
-          1,
-          1,
+          2,
           null,
           null,
           1,
-          1,
-          1,
-          1,
+          null,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           1,
           null,
-          null
-        ]
-      },
-      "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/services/base_service.rb": {
-        "lines": [
-          1,
-          1,
-          1,
           null,
-          null
-        ]
-      },
-      "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/poros/mapquest.rb": {
-        "lines": [
-          1,
-          1,
           null,
           1,
-          1,
-          1,
+          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1659799030
+    "timestamp": 1659805445
   }
 }

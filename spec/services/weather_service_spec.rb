@@ -4,7 +4,7 @@ RSpec.describe WeatherService do
   context 'happy path' do 
     it 'returns the weather based on lat long', :vcr do 
       lat = '39.7392'
-      long = '104.9903'
+      long = '-104.9903'
       
       # response = File.read('spec/fixtures/weather.json')
 
