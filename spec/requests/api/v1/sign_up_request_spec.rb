@@ -25,4 +25,20 @@ RSpec.describe "User Sign Up API" do
       expect(parsed_body[:data][:attributes]).to_not have_key(:password)
     end
   end
+
+  context 'sad path' do 
+    it 'doesnt work if information is missing' do 
+      user_info = {
+        "email"=>"doesntgetless@fakity.com",
+        "password"=>"ThisisNotReal123",
+        "password_confirmation"=>"ThisisReal123"
+      }
+      headers = { 'CONTENT_TYPE' => 'application/json'}
+
+      post "/api/v1/users", headers: headers, params: JSON.generate(user_info)
+     
+
+      expect(response).to have_http_status(400)
+    end
+  end
 end 
