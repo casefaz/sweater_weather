@@ -13,13 +13,14 @@ RSpec.describe "User Sign Up API" do
       headers = { 'CONTENT_TYPE' => 'application/json'}
 
       post "/api/v1/users", headers: headers, params: JSON.generate(user_info)
-
+      binding.pry
       expect(response).to be_successful
       expect(response).to have_http_status(201)
       parsed_body = JSON.parse(response.body, symbolize_names: true)
 
       expect(parsed_body).to be_a(Hash)
       expect(parsed_body[:data].count).to eq(3)
+      expect(parsed_body[:data][:attributes].count).to eq(2)
       expect(parsed_body[:data][:attributes]).to have_key(:email)
       expect(parsed_body[:data][:attributes]).to have_key(:api_key)
       expect(parsed_body[:data][:attributes]).to_not have_key(:password)
