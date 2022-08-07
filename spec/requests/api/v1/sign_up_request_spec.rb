@@ -36,9 +36,23 @@ RSpec.describe "User Sign Up API" do
       headers = { 'CONTENT_TYPE' => 'application/json'}
 
       post "/api/v1/users", headers: headers, params: JSON.generate(user_info)
-     
-
+      error = JSON.parse(response.body, symbolize_names: true)
+      expect(error[:error]).to eq("Password confirmation doesn't match Password")
       expect(response).to have_http_status(400)
+    end
+
+    it 'doesnt work if email is blank' do 
+      user_info = {
+        "email"=>"",
+        "password"=>"ThisisNotReal123",
+        "password_confirmation"=>"ThisisReal123"
+      }
+      headers = { 'CONTENT_TYPE' => 'application/json'}
+
+      post "/api/v1/users", headers: headers, params: JSON.generate(user_info)
+      error = JSON.parse(response.body, symbolize_names: true)
+      expect(response).to have_http_status(400)
+      expect(error[:error]).to eq("Email can't be blank and Password confirmation doesn't match Password")
     end
   end
 end 
