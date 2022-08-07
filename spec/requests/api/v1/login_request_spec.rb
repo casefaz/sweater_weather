@@ -37,4 +37,30 @@ RSpec.describe 'Login Endpoint' do
       expect(parsed_body[:data][:attributes]).to_not have_key(:password)
     end
   end
+
+  context 'sad path' do 
+    it 'is unsuccessful if password is bad' do 
+      create_user = {
+        "email"=>"doesntgetmore@fakity.com",
+        "password"=>"ThisisReal123",
+        "password_confirmation"=>"ThisisReal123"
+      }
+  
+      headers = { 'CONTENT_TYPE' => 'application/json'}
+
+      post "/api/v1/users", headers: headers, params: JSON.generate(create_user)
+
+      find_user = {
+        "email"=>"doesntgetmore@fakity.com",
+        "password"=>"ThisisNotReal123"
+      }
+    
+      headers = { 'CONTENT_TYPE' => 'application/json'}
+
+      post "/api/v1/sessions", headers: headers, params: JSON.generate(find_user)
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(400)
+    end
+  end
 end
