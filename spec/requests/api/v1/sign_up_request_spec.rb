@@ -4,12 +4,11 @@ RSpec.describe "User Sign Up API" do
   context 'happy path' do 
     it 'exposes the sign up endpoint' do 
       user_info = {
-        "user" => {
           "email"=>"doesntgetmore@fakity.com",
           "password"=>"ThisisReal123",
           "password_confirmation"=>"ThisisReal123"
         }
-      }
+    
       headers = { 'CONTENT_TYPE' => 'application/json'}
 
       post "/api/v1/users", headers: headers, params: JSON.generate(user_info)

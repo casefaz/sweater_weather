@@ -5,10 +5,10 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  after_validation do 
+  before_create do 
     self[:api_key] = generate_key
   end 
-  
+
   def generate_key
     SecureRandom.hex(13)
   end
