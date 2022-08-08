@@ -1,0 +1,12 @@
+require 'rails_helper'
+
+RSpec.describe RoadTripFacade do 
+  it 'returns the length of the roadtrip' do 
+    origin = 'denver,co'
+    destination = 'chicago,il'
+
+    length = RoadTripFacade.get_length(origin, destination)
+
+    expect(length).to be_an_instance_of(RoadTrip)
+  end
+end
