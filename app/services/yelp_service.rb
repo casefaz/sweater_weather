@@ -6,7 +6,7 @@ class YelpService
 
   def self.get_restaurants(city, type)
     response = YelpService.conn.get('/v3/businesses/search') do |f|
-      f.headers['Authorization'] = ENV['YELP KEY']
+      f.headers['Authorization'] = ENV['YELP_KEY']
       f.params['term'] = type
       f.params['location'] = city
     end
