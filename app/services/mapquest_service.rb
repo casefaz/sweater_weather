@@ -4,7 +4,7 @@ class MapquestService
   end
 
   def self.get_lat_lng(city)
-    response = MapquestService.conn.get('/geocoding/v1/address?') do |f|
+    response = MapquestService.conn.get('/geocoding/v1/address') do |f|
       f.params['key'] = ENV['MAPQUEST_KEY']
       f.params['location'] = city
     end
