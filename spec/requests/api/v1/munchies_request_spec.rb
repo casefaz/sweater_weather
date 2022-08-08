@@ -4,6 +4,7 @@ RSpec.describe 'Muchies API' do
   it 'returns the requested information' do 
     city = 'denver,co'
     type = 'chinese'
+    weather = File.read('spec/fixtures/weather.json')
 
     get "/api/v1/munchies?location=#{city}&food=#{type}"
 
