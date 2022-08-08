@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Business do 
   it 'exists and has attributes' do
-    data = {
-      "businesses": [
+    data =
           {
               "id": "Yb4iTpZ3SjSEenqY6XMbFA",
               "alias": "taste-of-china-denver",
@@ -53,12 +52,12 @@ RSpec.describe Business do
               "display_phone": "(303) 477-2204",
               "distance": 4901.717617542795
           }
-        ]
-      }
+      
     restaurant = Business.new(data)
 
-    expect(restaurant).to be_an_instance_of(Business)
-    expect(restaurant.name).to eq("Taste of China")
-    expect(restaurant.address).to eq("1935 Federal Blvd, Denver, CO 80204")
+    expect(restaurant).to be_an(Array)
+    expect(restaurant).to be_all(Business)
+    expect(restaurant.first.name).to eq("Taste of China")
+    expect(restaurant.first.address).to eq("1935 Federal Blvd, Denver, CO 80204")
   end
 end
