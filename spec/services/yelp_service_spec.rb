@@ -9,6 +9,7 @@ RSpec.describe YelpService do
     expect(business_response).to be_a(Hash)
     expect(business_response).to have_key(:businesses)
     expect(business_response[:businesses].first).to have_key(:name)
+    expect(business_response[:businesses].first[:name]).to be_a(String)
     expect(business_response[:businesses].first).to have_key(:location)
     expect(business_response[:businesses].first[:location]).to have_key(:address1)
     expect(business_response[:businesses].first[:location]).to have_key(:address2)
@@ -16,5 +17,6 @@ RSpec.describe YelpService do
     expect(business_response[:businesses].first[:location]).to have_key(:zip_code)
     expect(business_response[:businesses].first[:location]).to have_key(:state)
     expect(business_response[:businesses].first[:location]).to have_key(:display_address)
+    expect(business_response[:businesses].first[:location][:display_address].first).to be_a(String)
   end
 end
