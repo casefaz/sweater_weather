@@ -55,9 +55,8 @@ RSpec.describe Business do
       
     restaurant = Business.new(data)
 
-    expect(restaurant).to be_an(Array)
-    expect(restaurant).to be_all(Business)
-    expect(restaurant.first.name).to eq("Taste of China")
-    expect(restaurant.first.address).to eq("1935 Federal Blvd, Denver, CO 80204")
+    expect(restaurant).to be_an_instance_of(Business)
+    expect(restaurant.name).to eq("Taste of China")
+    expect(restaurant.address).to eq("1935 Federal Blvd, Denver, CO 80204")
   end
 end

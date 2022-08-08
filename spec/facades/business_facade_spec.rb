@@ -5,10 +5,11 @@ RSpec.describe BusinessFacade do
     city = 'denver,co'
     type = 'chinese'
 
-    restaurant = BusinessFacade.find_restaurants(city, type)
+    restaurants = BusinessFacade.find_restaurants(city, type)
 
-    expect(restaurant).to be_an_instance_of(Business)
-    expect(restaurant.name).to eq("Taste of China")
-    expect(restaurant.address).to eq("1935 Federal Blvd, Denver, CO 80204")
+    expect(restaurants).to be_an(Array)
+    expect(restaurants).to be_all(Business)
+    expect(restaurants.first.name).to eq("Taste of China")
+    expect(restaurants.first.address).to eq("1935 Federal Blvd, Denver, CO 80204")
   end
 end

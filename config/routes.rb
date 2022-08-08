@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :api do 
     namespace :v1 do 
       get '/forecast', to: 'forecast#index'
+      get '/munchies', to: 'munchies#index'
       resources :users, only: [:new, :create]
       resources :sessions, only: [:new, :create]
     end
