@@ -28,7 +28,7 @@ RSpec.describe 'Muchies API' do
   end
 
   context 'sad path' do 
-    it 'returns an error if fields are missing' do 
+    it 'returns an error if location is missing' do 
       city = ''
       type = 'chinese'
       # weather = File.read('spec/fixtures/weather.json')
