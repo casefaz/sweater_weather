@@ -19,6 +19,9 @@ RSpec.describe MapquestService do
     destination = "chicago,il"
 
     response = MapquestService.get_travel_info(origin, destination)
+
     expect(response).to be_a(Hash)
+    expect(response).to have_key(:route)
+    expect(response[:route]).to have_key(:formattedTime)
   end
 end
