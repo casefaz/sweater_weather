@@ -54,7 +54,7 @@ RSpec.describe Business do
           }
       
     restaurant = Business.new(data)
-
+    # binding.pry
     expect(restaurant).to be_an_instance_of(Business)
     expect(restaurant.name).to eq("Taste of China")
     expect(restaurant.address).to eq("1935 Federal Blvd, Denver, CO 80204")
