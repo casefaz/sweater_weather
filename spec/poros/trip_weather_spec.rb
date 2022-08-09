@@ -38,7 +38,7 @@ RSpec.describe TripWeather do
     destination = 'detroit,mi'
     weather_data = WeatherService.get_weather(lat, long)
     road_time = RoadTripFacade.get_length(origin, destination)
-    # binding.pry
+    binding.pry
     travel = road_time.travel_time
     travel_forecast = TripWeather.new(weather_data, travel)
 

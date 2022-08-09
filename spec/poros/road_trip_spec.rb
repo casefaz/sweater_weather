@@ -28,9 +28,11 @@ RSpec.describe RoadTrip do
           "formattedTime": "14:24:27"
         }
       }
-    trip = RoadTrip.new(data)
+    trip = RoadTrip.new('Denver', 'Chicago', data)
     # binding.pry
     expect(trip).to be_an_instance_of(RoadTrip)
     expect(trip.travel_time).to eq("14:24:27")
+    expect(trip.origin).to eq('Denver')
+    expect(trip.destination).to eq('Chicago')
   end
 end

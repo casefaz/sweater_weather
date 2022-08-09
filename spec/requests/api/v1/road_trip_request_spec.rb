@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe 'Road Trip API' do 
   context 'happy path' do 
-    it 'returns road trip information' do
+    it 'returns road trip information', :vcr do
       user = User.create!({
         "email": "doesntgetmore@fakity.com",
         "password": "ThisisReal123",
