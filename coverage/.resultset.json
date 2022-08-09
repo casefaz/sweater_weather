@@ -1,6 +1,51 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/facades/road_trip_facade.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/services/mapquest_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/services/base_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/poros/road_trip.rb": {
         "lines": [
           1,
@@ -17,6 +62,6 @@
         ]
       }
     },
-    "timestamp": 1660065162
+    "timestamp": 1660065320
   }
 }
