@@ -31,18 +31,22 @@ RSpec.describe TripWeather do
     expect(forecast.full_hours(weather_data).first).to_not have_key(:wind_gust)
   end
 
-  xit 'returns weather for a specific time and place', :vcr do 
+  it 'returns weather for a specific time and place', :vcr do 
     lat = '39.7392'
     long = '-104.9903'
     origin = 'denver,co'
     destination = 'detroit,mi'
-    weather_data = ForecastFacade.forecast(lat, long)
+    weather_data = WeatherService.get_weather(lat, long)
     road_time = RoadTripFacade.get_length(origin, destination)
     # binding.pry
     travel = road_time.travel_time
     travel_forecast = TripWeather.new(weather_data, travel)
 
-    # binding.pry
+    expected = {
+      :temperature=>74.53, 
+      :conditions=>"clear sky"
+    }
     expect(travel_forecast.weather_at_eta).to be_a(Hash)
+    expect(travel_forecast.weather_at_eta).to eq(expected)
   end
 end

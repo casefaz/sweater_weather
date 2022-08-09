@@ -21,7 +21,6 @@ class TripWeather
   end
 
   def weather_at_eta
-    # binding.pry
     if @travel_time <= 48
       {
         "temperature": full_hours(data)[@travel_time - 1][:temperature],
@@ -29,8 +28,8 @@ class TripWeather
       }
     else
       { 
-      "temperature": @data.daily_weather[(@travel_time / 24) - 1][:max_temp],
-      "conditions": @data.daily_weather[(@travel_time / 24) -1][:conditions]
+      "temperature": @data[:daily][(@travel_time / 24) - 1][:max_temp],
+      "conditions": @data[:daily][(@travel_time / 24) -1][:conditions]
       }
     end 
   end
