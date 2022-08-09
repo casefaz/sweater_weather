@@ -1,14 +1,13 @@
 class TripWeatherSerializer
   def self.get_arrival_weather(eta)
-    binding.pry
     { 
       "data": {
-        "id": null,
+        "id": "null",
         "type": "roadtrip",
         "attributes": {
-          "start_city": "",
-          "end_city": "",
-          "travel_time": eta.travel_time,
+          "start_city": eta.travel_data.origin.titleize,
+          "end_city": eta.travel_data.destination.titleize,
+          "travel_time": eta.travel_data.travel_time,
           "weather_at_eta": eta.weather_at_eta
         }
       }
