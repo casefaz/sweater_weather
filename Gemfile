@@ -53,7 +53,8 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda-matchers'
-  # gem 'webmock'
+  gem 'webmock'
+  gem 'vcr'
   gem 'simplecov'
 end 
 

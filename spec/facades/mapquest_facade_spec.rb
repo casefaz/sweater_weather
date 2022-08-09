@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe MapquestFacade do 
-  it 'returns lat city' do 
+  it 'returns lat city', :vcr do 
     city = 'denver,co'
 
     geocoder = MapquestFacade.get_coordinates(city)

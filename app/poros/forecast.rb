@@ -37,7 +37,7 @@ class Forecast
   end
 
   def daily(data)
-    data.first(5).map do |data|
+    data[1..5].map do |data|
       {
         date: Time.at(data[:dt]).to_s,
         sunrise: Time.at(data[:sunrise]).to_s,

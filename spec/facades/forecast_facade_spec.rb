@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe ForecastFacade do 
-  it 'returns forecast objects' do
-    coordinates = File.read("spec/fixtures/lat_lng.json")
-    response = JSON.parse(coordinates, symbolize_names: true)
+  it 'returns forecast objects', :vcr do
+    city = 'denver,co'
+    coordinates = MapquestService.get_lat_lng(city)
 
-    lat = response[:results].first[:locations].first[:latLng][:lat]
-    lon = response[:results].first[:locations].first[:latLng][:lng]
+    lat = coordinates[:results].first[:locations].first[:latLng][:lat]
+    lon = coordinates[:results].first[:locations].first[:latLng][:lng]
 
 
     forecast = ForecastFacade.forecast(lat, lon)
