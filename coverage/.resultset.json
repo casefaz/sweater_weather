@@ -1,6 +1,77 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/poros/trip_weather.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/services/weather_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/services/base_service.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
       "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/facades/road_trip_facade.rb": {
         "lines": [
           1,
@@ -37,15 +108,6 @@
           null
         ]
       },
-      "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/services/base_service.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
       "/Users/casefaz/turing/3mod/projects/sweater-weather/sweater_weather/app/poros/road_trip.rb": {
         "lines": [
           1,
@@ -62,6 +124,6 @@
         ]
       }
     },
-    "timestamp": 1660065320
+    "timestamp": 1660065626
   }
 }

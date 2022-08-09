@@ -1,11 +1,11 @@
 class TripWeather
   attr_reader :data,
-              :travel_time
+              :travel_data
 
-  def initialize(weather_data, travel_time)
+  def initialize(weather_data, travel_data)
     # binding.pry
     @data = weather_data
-    @travel_time = travel_time.to_i
+    @travel_data = travel_data
   end
 
   def full_hours(data)

@@ -7,11 +7,12 @@ RSpec.describe TripWeather do
     origin = 'denver,co'
     destination = 'detroit,mi'
     weather_data = WeatherService.get_weather(lat, long)
-    road_time = RoadTripFacade.get_length(origin, destination)
-    travel = road_time.travel_time
-    arrival_weather = TripWeather.new(weather_data, travel)
+    travel_data = RoadTripFacade.get_length(origin, destination)
+    arrival_weather = TripWeather.new(weather_data, travel_data)
 
     expect(arrival_weather).to be_an_instance_of(TripWeather)
+    expect(arrival_weather.data).to eq(weather_data)
+    expect(arrival_weather.travel_data).to eq(travel_data)
   end
 
   it 'returns unlimited hourly weather', :vcr do 
