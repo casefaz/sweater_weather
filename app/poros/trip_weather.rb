@@ -43,8 +43,8 @@ class TripWeather
     else
       # binding.pry
       { 
-      "temperature": @data[:daily][(route_possibilities / 24) - 1][:max_temp],
-      "conditions": @data[:daily][(route_possibilities / 24) -1][:conditions]
+      "temperature": @data[:daily][(route_possibilities / 24) - 1][:temp][:max],
+      "conditions": @data[:daily][(route_possibilities / 24) - 1][:weather].first[:description]
       }
     end 
   end
