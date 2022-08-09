@@ -8,6 +8,6 @@ RSpec.describe RoadTripFacade do
     length = RoadTripFacade.get_length(origin, destination)
 
     expect(length).to be_an_instance_of(RoadTrip)
-    expect(length.length).to eq("14:24:27")
+    expect(length.travel_time).to eq("14:24:27")
   end
 end

@@ -49,25 +49,4 @@ class Forecast
       }
     end
   end
-
-  def weather_at_eta(travel_time)
-    length = travel_time.to_i
-    # binding.pry
-
-    # if length <= 8
-    #   {
-    #     @hourly_weather[length - 1][:temperature],
-    #     @hourly_weather[length - 1][:conditions]
-    #   }
-    # elsif length >= 9 && length <= 24
-    #   { 
-    #     @current_weather[:temperature],
-    #     @current_weather[:conditions]
-    #   }
-    # else 
-    #   { @daily_weather[(length / 24) - 1][:max_temp],
-    #     @daily_weather[(length / 24) -1][:conditions]
-    #   }
-    # end 
-  end
 end

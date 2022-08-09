@@ -31,6 +31,6 @@ RSpec.describe RoadTrip do
     trip = RoadTrip.new(data)
     # binding.pry
     expect(trip).to be_an_instance_of(RoadTrip)
-    expect(trip.length).to eq("14:24:27")
+    expect(trip.travel_time).to eq("14:24:27")
   end
 end

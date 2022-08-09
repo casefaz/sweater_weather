@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Tue, 09 Aug 2022 15:18:01 GMT
+      - Tue, 09 Aug 2022 15:17:57 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -96,5 +96,5 @@ http_interactions:
         rain","icon":"10d"}],"clouds":16,"pop":0.96,"rain":3.86,"uvi":11},{"dt":1660590000,"sunrise":1660565533,"sunset":1660615013,"moonrise":1660623360,"moonset":1660580040,"moon_phase":0.64,"temp":{"day":82.53,"min":67.53,"max":88.25,"night":70.72,"eve":70.86,"morn":67.73},"feels_like":{"day":81.66,"night":70.27,"eve":70.7,"morn":67.59},"pressure":1014,"humidity":38,"dew_point":54.05,"wind_speed":18.34,"wind_deg":219,"wind_gust":31.32,"weather":[{"id":500,"main":"Rain","description":"light
         rain","icon":"10d"}],"clouds":20,"pop":1,"rain":4.42,"uvi":11},{"dt":1660676400,"sunrise":1660651991,"sunset":1660701332,"moonrise":1660711260,"moonset":1660670520,"moon_phase":0.67,"temp":{"day":83.07,"min":67.98,"max":84.47,"night":73.71,"eve":83.21,"morn":68.74},"feels_like":{"day":82,"night":73.65,"eve":81.68,"morn":68.27},"pressure":1014,"humidity":37,"dew_point":54.27,"wind_speed":9.73,"wind_deg":343,"wind_gust":11.1,"weather":[{"id":500,"main":"Rain","description":"light
         rain","icon":"10d"}],"clouds":89,"pop":0.96,"rain":0.63,"uvi":11}]}'
-  recorded_at: Tue, 09 Aug 2022 15:18:01 GMT
+  recorded_at: Tue, 09 Aug 2022 15:17:57 GMT
 recorded_with: VCR 6.1.0

@@ -1,7 +1,7 @@
 class RoadTrip
-  attr_reader :length
+  attr_reader :travel_time
 
   def initialize(data)
-    @length = data[:route][:formattedTime]
+    @travel_time = data[:route][:formattedTime]
   end
 end
