@@ -4,7 +4,7 @@
 <img src="https://media4.giphy.com/media/3osxYzIQRqN4DOEddC/giphy.gif?cid=ecf05e47wegdrse2zti96spjc8jgw6p7n6un3xe0n8hsjlpm&rid=giphy.gif&ct=g" alt="sweaters" width="30%"/>
 </div
 
->Sweater Weather is a Ruby on Rails project that explores service-oriented architecture to better allow the front end to communicate with the backend through exposed API endpoints.
+>Sweater Weather is a Ruby on Rails project that explores service-oriented architecture to better allow the front end to communicate with the backend by exposing API endpoints.
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
