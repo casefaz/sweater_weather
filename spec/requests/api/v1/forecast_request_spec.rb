@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Forecast API'do 
-  it 'sends the forecast based on a city' do
+  it 'sends the forecast based on a city', :vcr do
     city = 'denver,co'
     get "/api/v1/forecast?location=#{city}"
 

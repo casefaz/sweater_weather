@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe RoadTripFacade do 
-  it 'returns the length of the roadtrip' do 
+  it 'returns the length of the roadtrip', :vcr do 
     origin = 'denver,co'
     destination = 'chicago,il'
 
