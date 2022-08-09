@@ -3,13 +3,11 @@ class Forecast
               :hourly_weather,
               :daily_weather,
               :id
-              :data
   def initialize(data)
     @id = nil
     @current_weather = current(data[:current])
     @hourly_weather = hourly(data[:hourly])
     @daily_weather = daily(data[:daily])
-    @data = data
   end
 
   def current(data)
@@ -53,22 +51,23 @@ class Forecast
   end
 
   def weather_at_eta(travel_time)
-    # binding.pry
     length = travel_time.to_i
-    if length <= 8
-      { 
-        @hourly_weather[length - 1][:temperature],
-        @hourly_weather[length - 1][:conditions]
-      }
-    elsif length >= 9 && length <= 24
-      { 
-        @current_weather[:temperature],
-        @current_weather[:conditions]
-      }
-    else 
-      { @daily_weather[(length / 24) - 1][:max_temp],
-        @daily_weather[(length / 24) -1][:conditions]
-      }
-    end 
+    # binding.pry
+
+    # if length <= 8
+    #   {
+    #     @hourly_weather[length - 1][:temperature],
+    #     @hourly_weather[length - 1][:conditions]
+    #   }
+    # elsif length >= 9 && length <= 24
+    #   { 
+    #     @current_weather[:temperature],
+    #     @current_weather[:conditions]
+    #   }
+    # else 
+    #   { @daily_weather[(length / 24) - 1][:max_temp],
+    #     @daily_weather[(length / 24) -1][:conditions]
+    #   }
+    # end 
   end
 end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe MapquestService do 
-  it 'returns lat lon coordinates' do 
+  it 'returns lat lon coordinates', :vcr do 
     city = 'Denver,CO'
 
     response = MapquestService.get_lat_lng(city)
@@ -14,7 +14,7 @@ RSpec.describe MapquestService do
     expect(response[:results].first[:locations].first[:latLng]).to have_key(:lat)
   end
 
-  it 'finds the distance between two points in time' do 
+  it 'finds the distance between two points in time', :vcr do 
     origin = "denver,co"
     destination = "chicago,il"
 

@@ -1,6 +1,6 @@
 class Api::V1::RoadTripController < ApplicationController
   def create
-    binding.pry
+    # binding.pry
     
   end
 end
