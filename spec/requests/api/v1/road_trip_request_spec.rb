@@ -40,4 +40,29 @@ RSpec.describe 'Road Trip API' do
       expect(parsed_body[:data][:attributes][:weather_at_eta]).to have_key(:conditions)
     end
   end
+
+  context 'sad path' do 
+    it 'returns a 401 error with no api key', :vcr do
+      user = User.create!({
+        "email": "doesntgetmore@fakity.com",
+        "password": "ThisisReal123",
+        "password_confirmation": "ThisisReal123"
+      })
+
+      origin = 'denver,co'
+      destination = 'chicago,il'
+
+      road_trip_info = {
+        "origin": origin,
+        "destination": destination,
+        "api_key": ""
+      }
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+
+      post "/api/v1/road_trip", headers: headers, params: JSON.generate(road_trip_info)
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(401)
+    end 
+  end
 end
