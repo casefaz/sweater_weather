@@ -3,13 +3,11 @@ class TripWeather
               :travel_data
 
   def initialize(weather_data, travel_data)
-    # binding.pry
     @data = weather_data
     @travel_data = travel_data
   end
 
   def full_hours(data)
-    # binding.pry
     data[:hourly].map do |data|
       { 
         time: Time.at(data[:dt]).strftime('%I:%M:%S %p'),
@@ -28,6 +26,7 @@ class TripWeather
         "conditions": full_hours(data)[travel_time - 1][:conditions]
       }
     else
+      # binding.pry
       { 
       "temperature": @data[:daily][(travel_time / 24) - 1][:max_temp],
       "conditions": @data[:daily][(travel_time / 24) -1][:conditions]
