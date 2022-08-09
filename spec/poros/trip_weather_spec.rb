@@ -21,9 +21,8 @@ RSpec.describe TripWeather do
     origin = 'denver,co'
     destination = 'detroit,mi'
     weather_data = WeatherService.get_weather(lat, long)
-    road_time = RoadTripFacade.get_length(origin, destination)
-    travel = road_time.travel_time
-    forecast = TripWeather.new(weather_data, travel)
+    travel_data = RoadTripFacade.get_length(origin, destination)
+    forecast = TripWeather.new(weather_data, travel_data)
 
     expect(forecast.full_hours(weather_data).count).to eq(48)
     expect(forecast.full_hours(weather_data).first[:time]).to be_a(String)
@@ -38,10 +37,8 @@ RSpec.describe TripWeather do
     origin = 'denver,co'
     destination = 'detroit,mi'
     weather_data = WeatherService.get_weather(lat, long)
-    road_time = RoadTripFacade.get_length(origin, destination)
-    binding.pry
-    travel = road_time.travel_time
-    travel_forecast = TripWeather.new(weather_data, travel)
+    travel_data = RoadTripFacade.get_length(origin, destination)
+    travel_forecast = TripWeather.new(weather_data, travel_data)
 
     expected = {
       :temperature=>74.53, 

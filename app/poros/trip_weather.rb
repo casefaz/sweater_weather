@@ -21,15 +21,16 @@ class TripWeather
   end
 
   def weather_at_eta
-    if @travel_time <= 48
+    travel_time = @travel_data.travel_time.to_i
+    if travel_time <= 48
       {
-        "temperature": full_hours(data)[@travel_time - 1][:temperature],
-        "conditions": full_hours(data)[@travel_time - 1][:conditions]
+        "temperature": full_hours(data)[travel_time - 1][:temperature],
+        "conditions": full_hours(data)[travel_time - 1][:conditions]
       }
     else
       { 
-      "temperature": @data[:daily][(@travel_time / 24) - 1][:max_temp],
-      "conditions": @data[:daily][(@travel_time / 24) -1][:conditions]
+      "temperature": @data[:daily][(travel_time / 24) - 1][:max_temp],
+      "conditions": @data[:daily][(travel_time / 24) -1][:conditions]
       }
     end 
   end
