@@ -47,4 +47,21 @@ RSpec.describe TripWeather do
     expect(travel_forecast.weather_at_eta).to be_a(Hash)
     expect(travel_forecast.weather_at_eta).to eq(expected)
   end
+
+  it 'formats travel time and weather if route is impossible', :vcr do 
+    lat = '39.7392'
+    long = '-104.9903'
+    origin = 'denver,co'
+    destination = 'london, england'
+    weather_data = WeatherService.get_weather(lat, long)
+    travel_data = RoadTripFacade.get_length(origin, destination)
+    travel_forecast = TripWeather.new(weather_data, travel_data)
+
+    expected = {
+      :temperature=>nil, 
+      :conditions=>nil
+    }
+    expect(travel_forecast.route_possibilities).to eq("Impossible Route")
+    expect(travel_forecast.weather_at_eta).to eq(expected)
+  end
 end

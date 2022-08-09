@@ -18,18 +18,33 @@ class TripWeather
     end
   end
 
+  def route_possibilities
+    # binding.pry
+    if @travel_data.travel_time == nil
+      "Impossible Route"
+    else
+      @travel_data.travel_time.to_i
+    end
+    
+  end
+
   def weather_at_eta
-    travel_time = @travel_data.travel_time.to_i
-    if travel_time <= 48
+    # binding.pry
+    if route_possibilities == "Impossible Route"
       {
-        "temperature": full_hours(data)[travel_time - 1][:temperature],
-        "conditions": full_hours(data)[travel_time - 1][:conditions]
+        "temperature": nil,
+        "conditions": nil
+      }
+    elsif route_possibilities <= 48
+      {
+        "temperature": full_hours(data)[route_possibilities - 1][:temperature],
+        "conditions": full_hours(data)[route_possibilities - 1][:conditions]
       }
     else
       # binding.pry
       { 
-      "temperature": @data[:daily][(travel_time / 24) - 1][:max_temp],
-      "conditions": @data[:daily][(travel_time / 24) -1][:conditions]
+      "temperature": @data[:daily][(route_possibilities / 24) - 1][:max_temp],
+      "conditions": @data[:daily][(route_possibilities / 24) -1][:conditions]
       }
     end 
   end

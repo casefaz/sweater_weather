@@ -102,5 +102,35 @@ RSpec.describe 'Road Trip API' do
       expect(response).to_not be_successful
       expect(response).to have_http_status(401)
     end 
+
+    it 'has empty attributes if the route is impossible', :vcr do 
+      user = User.create!({
+        "email": "doesntgetmore@fakity.com",
+        "password": "ThisisReal123",
+        "password_confirmation": "ThisisReal123"
+      })
+
+      origin = 'seattle, wa'
+      destination = 'london, england'
+      api_key = user.api_key
+
+      road_trip_info = {
+        "origin": origin,
+        "destination": destination,
+        "api_key": api_key
+      }
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+
+      post "/api/v1/road_trip", headers: headers, params: JSON.generate(road_trip_info)
+
+      expect(response).to be_successful
+      expect(response).to have_http_status(200)
+
+      parsed_body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(parsed_body[:data][:attributes][:travel_time]).to eq('Impossible Route')
+      expect(parsed_body[:data][:attributes][:temperature]).to eq(nil)
+      expect(parsed_body[:data][:attributes][:conditions]).to eq(nil)
+    end
   end
 end
