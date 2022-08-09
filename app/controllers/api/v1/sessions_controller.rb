@@ -4,8 +4,10 @@ class Api::V1::SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       render json: UserSerializer.new(user)
-    else 
+    elsif !user.nil?
       render json: {error: user.errors.full_messages.to_sentence}, status: 400
+    else
+      render status: 400
     end
   end
 end

@@ -63,7 +63,7 @@ RSpec.describe 'Login Endpoint' do
       expect(response).to have_http_status(400)
     end
 
-    xit 'doesnt work if email isnt registered' do 
+    it 'doesnt work if email isnt registered' do 
       create_user = {
         "email"=>"doesntgetmore@fakity.com",
         "password"=>"ThisisReal123",
