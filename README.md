@@ -121,9 +121,11 @@ body:
 
 - using Simplecov, postman, and RSpec Sweater Weather takes into account sad pathing and coverage of all present code
 
-> in the example below you can see test coverage, edge casing, and sad pathing
+> in the examples below you can see test coverage, edge casing, and sad pathing
 
 ![Screen Shot 2022-08-10 at 6 57 08 AM](https://user-images.githubusercontent.com/98674727/183906865-60948b2a-9bb8-48db-af53-54c4361021e5.png)
+
+![Screen Shot 2022-08-10 at 7 27 14 AM](https://user-images.githubusercontent.com/98674727/183913165-2e609235-8bb8-484c-bb99-f30f6f1b4b56.png)
 
 <!-- CONTACT -->
 ## Contact
