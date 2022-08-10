@@ -21,6 +21,7 @@
         <li><a href="#road-trip">Road Trip</a></li>
      </ul>
     </li>
+    <li><a href="#testing">Testing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 
@@ -58,6 +59,7 @@ GET /api/v1/forecast?location=denver,co
 Content-Type: application/json
 Accept: application/json
 ```
+![Screen Shot 2022-08-10 at 6 47 26 AM](https://user-images.githubusercontent.com/98674727/183905749-0e9153e5-5a9d-48cb-ae61-081549bfc71a.png)
 
 
 ### User Registration
@@ -73,6 +75,7 @@ Accept: application/json
   "password_confirmation": "password"
 }
 ```
+![Screen Shot 2022-08-10 at 6 46 16 AM](https://user-images.githubusercontent.com/98674727/183905551-a91e87a4-a54c-44b5-addf-ceaf8dbc706e.png)
 
 
 ### Login
@@ -88,6 +91,7 @@ Accept: application/json
 }
 ```
 
+![Screen Shot 2022-08-10 at 6 53 03 AM](https://user-images.githubusercontent.com/98674727/183906083-78c51341-caa1-4f16-a899-2bf20d98964a.png)
 
 
 ### Road Trip
@@ -107,8 +111,19 @@ body:
 }
 ```
 
+![Screen Shot 2022-08-10 at 6 47 12 AM](https://user-images.githubusercontent.com/98674727/183905683-75c9e59e-e464-4e26-90a6-789bf2756218.png)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- TESTING -->
+## Test Coverage
+
+- using Simplecov, postman, and RSpec Sweater Weather takes into account sad pathing and coverage of all present code
+
+> in the example below you can see test coverage, edge casing, and sad pathing
+
+![Screen Shot 2022-08-10 at 6 57 08 AM](https://user-images.githubusercontent.com/98674727/183906865-60948b2a-9bb8-48db-af53-54c4361021e5.png)
 
 <!-- CONTACT -->
 ## Contact
