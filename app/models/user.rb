@@ -4,6 +4,7 @@ class User < ApplicationRecord
   validates_uniqueness_of :api_key
 
   has_secure_password
+  # has secure token
 
   before_create do 
     self[:api_key] = generate_key
